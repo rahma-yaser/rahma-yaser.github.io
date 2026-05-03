@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Rahma Yasser Mahmoud — Data Analytics Instructor and Teaching Assistant at Faculty of Computers and Information, Assiut University. Specialized in Power BI, SQL, Data Warehousing, Machine Learning, Deep Learning and Bioinformatics." />
+  <meta name="keywords" content="Rahma Yasser, Data Analyst, Power BI, SQL, Data Warehousing, Machine Learning, Bioinformatics, Teaching Assistant, Assiut University" />
+  <meta name="author" content="Rahma Yasser Mahmoud" />
+
+  <meta property="og:title" content="Rahma Yasser — Data Analyst & Instructor" />
+  <meta property="og:description" content="Data Analytics Instructor specialized in Power BI, SQL, Data Warehousing, Machine Learning, Deep Learning and Bioinformatics." />
+  <meta property="og:type" content="website" />
+
+  <title>Rahma Yasser — Data Analyst & Instructor</title>
+  <link rel="icon" href="public/icon.svg" type="image/svg+xml" />
+
+  <style>
+    :root {
+      --background: #fbfaf5;
+      --foreground: #1f2937;
+      --card: #ffffff;
+      --primary: #26324a;
+      --primary-foreground: #fbfaf5;
+      --secondary: #f3f0e8;
+      --muted: #6b7280;
+      --accent: #d3912f;
+      --border: #e7e1d5;
+      --shadow: 0 20px 50px rgba(38, 50, 74, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      background: rgba(251, 250, 245, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(231, 225, 213, 0.75);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .btn-outline {
+      background: var(--card);
+      border-color: var(--border);
+      color: var(--foreground);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fffaf1;
+    }
+
+    .hero {
+      position: relative;
+      padding: 150px 0 86px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(38,50,74,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(38,50,74,0.045) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 820px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 12px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin: 24px 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      color: var(--primary);
+    }
+
+    h1 em, h2 em {
+      color: var(--accent);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .lead {
+      max-width: 720px;
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 32px 0 30px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .stats {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 72px;
+      padding-top: 38px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-value {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--primary);
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 90px 0;
+      scroll-margin-top: 85px;
+    }
+
+    section.alt {
+      background: rgba(243, 240, 232, 0.55);
+    }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .section-kicker::before {
+      content: "";
+      display: inline-block;
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin: 12px 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--primary);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .section-desc {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 44px;
+      margin-top: 46px;
+      align-items: start;
+    }
+
+    .about-text {
+      color: rgba(31, 41, 55, 0.82);
+      font-size: 1.06rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 1px 0 rgba(38, 50, 74, 0.03);
+    }
+
+    .card:hover {
+      border-color: rgba(211, 145, 47, 0.55);
+    }
+
+    .small-card {
+      padding: 20px;
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      background: rgba(211, 145, 47, 0.12);
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--primary);
+      font-size: 1.35rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .skills-grid, .projects-grid, .courses-grid {
+      margin-top: 46px;
+    }
+
+    .skill-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .skill-header .icon-box {
+      margin: 0;
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      background: var(--background);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      color: rgba(31, 41, 55, 0.82);
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 330px;
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border-color: rgba(38, 50, 74, 0.25);
+      box-shadow: var(--shadow);
+    }
+
+    .project-card.featured h3,
+    .project-card.featured p {
+      color: var(--primary-foreground);
+    }
+
+    .project-card.featured p {
+      opacity: 0.78;
+    }
+
+    .project-topline {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-highlight {
+      white-space: nowrap;
+      background: var(--accent);
+      color: #fffaf1;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 0.72rem;
+    }
+
+    .project-card p {
+      flex: 1;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      color: var(--primary);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .featured .project-link {
+      color: var(--accent);
+    }
+
+    .featured .chip {
+      background: rgba(251, 250, 245, 0.10);
+      color: rgba(251, 250, 245, 0.88);
+      border-color: rgba(251, 250, 245, 0.18);
+    }
+
+    .role {
+      display: grid;
+      grid-template-columns: 1.4fr 2fr;
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .period {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .language-grid {
+      margin-top: 26px;
+    }
+
+    .language-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .contact {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      padding-bottom: 40px;
+    }
+
+    .contact .section-title,
+    .contact .section-desc {
+      color: var(--primary-foreground);
+    }
+
+    .contact .section-desc {
+      opacity: 0.76;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 62px;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid rgba(251,250,245,0.16);
+      background: rgba(251,250,245,0.06);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .contact-card:hover {
+      background: rgba(251,250,245,0.1);
+      border-color: rgba(211,145,47,0.55);
+    }
+
+    .contact-label {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: rgba(251,250,245,0.6);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .contact-value {
+      color: var(--primary-foreground);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(251,250,245,0.16);
+      color: rgba(251,250,245,0.6);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: 0;
+      background: var(--secondary);
+      color: var(--primary);
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav .btn-primary {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 22px;
+      }
+
+      .mobile-menu.open {
+        display: block;
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      .stats,
+      .grid-3,
+      .grid-2,
+      .about-grid,
+      .role,
+      .timeline-item,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured {
+        grid-column: span 1;
+      }
+
+      .timeline-item {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero {
+        padding-top: 118px;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Rahma Yasser</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge"><span class="badge-dot"></span> Available for opportunities</span>
+          <h1>Data Analytics <em>instructor</em> turning complex data into clear lessons and decisions.</h1>
+          <p class="lead">I'm Rahma Yasser — Teaching Assistant at the Faculty of Computers and Information, Assiut University, and Power BI instructor for the FCI Data Analysis Bootcamp. I specialize in SQL, Power BI, Data Warehousing, Machine Learning, Deep Learning and Bioinformatics.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View projects →</a>
+            <a class="btn btn-outline" href="public/Rahma-Yasser-CV.pdf" download>Download CV</a>
+          </div>
+          <div class="meta-row">
+            <span>📍 Assiut, Egypt</span>
+            <span>Bioinformatics, GPA 3.95 / 4.00</span>
+            <span>ITI Data Visualization Track</span>
+          </div>
+        </div>
+        <div class="stats" aria-label="Profile statistics">
+          <div><span class="stat-value">6+</span><span class="stat-label">Courses taught</span></div>
+          <div><span class="stat-value">2+</span><span class="stat-label">Years teaching</span></div>
+          <div><span class="stat-value">10+</span><span class="stat-label">Data projects</span></div>
+          <div><span class="stat-value">C1</span><span class="stat-label">English level</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-kicker">About</div>
+        <h2 class="section-title">Educator, analyst, and lifelong student of data.</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I'm a Data Analyst, instructor and educator with a strong technical foundation in SQL, Power BI, and Data Warehousing, and an academic background in Bioinformatics — I graduated top 3 of my class with a GPA of 3.95 / 4.00 from the Faculty of Computers and Information, Assiut University.</p>
+            <p>I combine ITI Data Visualization training with hands-on teaching experience. Currently, I'm a Teaching Assistant at FCI and led Power BI instructor for an intensive Data Analysis Bootcamp targeting third- and fourth-year students.</p>
+            <p>I'm passionate about translating complex technical concepts into clear, structured lessons, designing hands-on exercises, and mentoring students through real-world data and AI projects.</p>
+          </div>
+          <div class="grid-1">
+            <article class="card small-card"><div class="icon-box">🎓</div><h3>Educator at heart</h3><p>Teaching Assistant at FCI Assiut University and lead Power BI instructor for the FCI Data Analysis Bootcamp. I design hands-on labs, real business case studies, and capstone projects.</p></article>
+            <br />
+            <article class="card small-card"><div class="icon-box">📊</div><h3>Data-first mindset</h3><p>I work end-to-end across the BI lifecycle — from scraping and cleaning, to warehouse design with SSIS, to DAX models and storytelling dashboards in Power BI.</p></article>
+            <br />
+            <article class="card small-card"><div class="icon-box">👥</div><h3>Mentor & communicator</h3><p>I translate complex technical concepts into clear, structured lessons in both English and Arabic, mentoring students through real-world data and AI projects.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="alt">
+      <div class="container">
+        <div class="section-kicker">Skills & Tools</div>
+        <h2 class="section-title">A practical toolkit for analytics, modeling, and teaching.</h2>
+        <p class="section-desc">Grouped by what I actually use day-to-day — the same tools I teach students and apply on real projects.</p>
+        <div class="grid-3 skills-grid">
+          <article class="card"><div class="skill-header"><span class="icon-box">DB</span><h3>Databases & Warehousing</h3></div><div class="chips"><span class="chip">MySQL</span><span class="chip">MS SQL Server</span><span class="chip">Oracle (Toad)</span><span class="chip">SQL / PL/SQL</span><span class="chip">Analytical SQL</span><span class="chip">SSIS</span></div></article>
+          <article class="card"><div class="skill-header"><span class="icon-box">BI</span><h3>Visualization & BI</h3></div><div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Power Query (M)</span><span class="chip">Data modeling</span><span class="chip">Tableau</span><span class="chip">MS Excel</span></div></article>
+          <article class="card"><div class="skill-header"><span class="icon-box">{ }</span><h3>Programming & Scripting</h3></div><div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">scikit-learn</span><span class="chip">R</span><span class="chip">Bash</span><span class="chip">Git / GitHub</span><span class="chip">Linux</span></div></article>
+          <article class="card"><div class="skill-header"><span class="icon-box">AI</span><h3>Machine Learning & AI</h3></div><div class="chips"><span class="chip">Logistic Regression</span><span class="chip">Random Forest</span><span class="chip">XGBoost</span><span class="chip">Deep Learning</span><span class="chip">Keras / TensorFlow</span><span class="chip">Model evaluation</span></div></article>
+          <article class="card"><div class="skill-header"><span class="icon-box">ED</span><h3>Teaching & Communication</h3></div><div class="chips"><span class="chip">Lesson planning</span><span class="chip">Lab design</span><span class="chip">Mentoring</span><span class="chip">Technical writing</span><span class="chip">Presenting (EN / AR)</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-kicker">Selected Projects</div>
+        <h2 class="section-title">Real projects that double as teaching material.</h2>
+        <p class="section-desc">From end-to-end BI systems to deep learning research — each project is built to ship results and to be re-used as a hands-on teaching case.</p>
+        <div class="grid-3 projects-grid">
+          <article class="card project-card featured"><div class="project-topline"><span>ITI Graduation Project</span><span class="project-highlight">Full BI lifecycle</span></div><h3>Property Finder — Real Estate BI System</h3><p>End-to-end BI system for real-estate analytics — from large-scale public data scraping and cleaning to warehouse design and interactive Power BI dashboards. Used as a reference example when teaching the full BI lifecycle.</p><div class="chips"><span class="chip">Python</span><span class="chip">SQL Server</span><span class="chip">SSIS</span><span class="chip">Oracle PL/SQL</span><span class="chip">Power BI</span><span class="chip">Excel</span></div><a class="project-link" href="https://github.com/rahma-yaser/Property-Finder-Real-Estate-Data-Analysis-Visualization-Project" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></article>
+          <article class="card project-card featured"><div class="project-topline"><span>Bachelor Graduation Project</span></div><h3>Glaucoma Prediction using Deep Learning</h3><p>Web platform helping ophthalmologists predict glaucoma from fundus images. Trained CNN models on retinal scans reaching ~90% validation accuracy, deployed via a Django interface.</p><div class="chips"><span class="chip">Django</span><span class="chip">PostgreSQL</span><span class="chip">Keras</span><span class="chip">TensorFlow</span><span class="chip">Python</span></div><a class="project-link" href="https://github.com/rahma-yaser/Glaucoma-Detection-using-Deep-Learning" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></article>
+          <article class="card project-card"><div class="project-topline"><span>Power BI Dashboard</span></div><h3>Customer Churn Rate Analysis Dashboard</h3><p>Power BI dashboard analyzing customer behavior and churn patterns to support data-driven decisions. Reused as a teaching case for DAX measures and data storytelling in the FCI bootcamp.</p><div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Power Query</span></div><a class="project-link" href="https://github.com/rahma-yaser/Customer-Churn-Analysis-Dashboard" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></article>
+          <article class="card project-card"><div class="project-topline"><span>Analytical SQL Project</span></div><h3>Sales Performance Analysis — Electronics Retail</h3><p>Evaluated sales performance across regions, product categories, and salespersons using analytical SQL — aggregations, window functions, ranking, and pivoting. Reused as a lab exercise for SQL students.</p><div class="chips"><span class="chip">Analytical SQL</span><span class="chip">Window Functions</span><span class="chip">Ranking</span></div><a class="project-link" href="https://github.com/rahma-yaser/Sales-Performance-Analysis-for-Electronics-Retail-dataset-using-Window-Functions" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></article>
+          <article class="card project-card"><div class="project-topline"><span>Data Engineering</span></div><h3>Gravity Books — Data Warehouse</h3><p>Designed and implemented a star-schema data warehouse for an online bookstore using T-SQL — fact and dimension modeling, ETL routines, and analytical queries.</p><div class="chips"><span class="chip">T-SQL</span><span class="chip">MS SQL Server</span><span class="chip">Star Schema</span><span class="chip">ETL</span></div><a class="project-link" href="https://github.com/rahma-yaser/gravity_books-data-warehouse-project" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></article>
+          <article class="card project-card"><div class="project-topline"><span>Database Programming</span></div><h3>HR Advanced PL/SQL Project</h3><p>Advanced PL/SQL package for an HR system — stored procedures, functions, packages, triggers, and exception handling on Oracle, modeled after real HR business rules.</p><div class="chips"><span class="chip">Oracle</span><span class="chip">PL/SQL</span><span class="chip">Toad</span><span class="chip">Triggers</span></div><a class="project-link" href="https://github.com/rahma-yaser/HR-adv-PLSQL-project" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></article>
+          <article class="card project-card"><div class="project-topline"><span>Systems & Scripting</span></div><h3>DBMS Bash Scripting</h3><p>A lightweight database management system implemented in pure Bash — supports table creation, schema validation, CRUD operations, and querying through a CLI interface.</p><div class="chips"><span class="chip">Bash</span><span class="chip">Linux</span><span class="chip">CLI</span><span class="chip">DBMS</span></div><a class="project-link" href="https://github.com/rahma-yaser/DBMS_Bash_Scripting" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></article>
+        </div>
+        <div style="text-align:center; margin-top: 42px;"><a class="btn btn-outline" href="https://github.com/rahma-yaser" target="_blank" rel="noopener noreferrer">See all repositories on GitHub ↗</a></div>
+      </div>
+    </section>
+
+    <section id="teaching" class="alt">
+      <div class="container">
+        <div class="section-kicker">Teaching</div>
+        <h2 class="section-title">Teaching practical analytics through real examples.</h2>
+        <p class="section-desc">I design labs and lessons that move from concept to implementation, helping students connect theory with applied data work.</p>
+
+        <article class="card role">
+          <div><span class="period">Oct 2025 – Jan 2026</span><h3>Power BI Instructor — Data Analysis Bootcamp</h3><p>Faculty of Computers and Information, Assiut University</p></div>
+          <ul><li>Designed and delivered the Power BI module of an intensive Data Analysis Bootcamp targeting 3rd- and 4th-year FCI students.</li><li>Covered data modeling, Power Query, DAX measures and calculated columns, dashboard design, and data storytelling.</li><li>Built hands-on lab exercises and real-world business case studies to reinforce each concept practically.</li><li>Mentored participants on capstone dashboard projects with one-on-one feedback on modeling, visual design, and presentation.</li></ul>
+        </article>
+
+        <article class="card role">
+          <div><span class="period">Mar 2024 – Present</span><h3>Teaching Assistant</h3><p>Faculty of Computers and Information, Assiut University</p></div>
+          <ul><li>Teach lab sessions and tutorials across Data Mining, Artificial Intelligence, Machine Learning, Information Systems, and Databases.</li><li>Prepare lab materials, hands-on exercises, and assessments aligned with course learning objectives.</li><li>Provide one-on-one academic support during office hours and mentor students on graduation projects involving data analysis and ML.</li><li>Grade assignments and exams, giving written and verbal feedback to help students strengthen their analytical skills.</li></ul>
+        </article>
+
+        <div class="grid-3 courses-grid">
+          <article class="card"><span class="period">Bootcamp · 3rd & 4th year</span><h3>Power BI for Data Analysis</h3><p>Data modeling, Power Query (M), DAX measures, dashboard design, and data storytelling.</p></article>
+          <article class="card"><span class="period">Undergraduate · FCI</span><h3>Data Mining</h3><p>Data preprocessing, association rules, classification, clustering, and evaluation metrics.</p></article>
+          <article class="card"><span class="period">Undergraduate · FCI</span><h3>Artificial Intelligence</h3><p>Search algorithms, knowledge representation, and foundational AI techniques.</p></article>
+          <article class="card"><span class="period">Undergraduate · FCI</span><h3>Machine Learning</h3><p>Supervised and unsupervised learning, model training and evaluation, applied ML in Python.</p></article>
+          <article class="card"><span class="period">Undergraduate · FCI</span><h3>Information Systems</h3><p>Systems analysis and design, business processes, and the role of IS in organizations.</p></article>
+          <article class="card"><span class="period">Undergraduate · FCI</span><h3>Databases</h3><p>Relational design, normalization, SQL, and practical query writing on real schemas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-kicker">Education</div>
+        <h2 class="section-title">A foundation in computer science.</h2>
+        <article class="card timeline-item"><div class="icon-box">🏅</div><div><h3>Data Visualization Track</h3><p>Information Technology Institute (ITI) · Assiut, Egypt</p><p>Intensive professional track covering Power BI, Tableau, SQL, Data Warehousing (SSIS), and Excel.</p></div><span class="period">Jul 2025 – Oct 2025</span></article>
+        <article class="card timeline-item"><div class="icon-box">🎓</div><div><h3>Bachelor of Bioinformatics</h3><p>Faculty of Computers and Information, Assiut University · Assiut, Egypt</p><p>Top 3 of the class · GPA 3.95 / 4.00. Coursework: Databases, Statistics, Machine Learning, Data Mining, Programming, Algorithms.</p></div><span class="period">Sep 2019 – Jul 2023</span></article>
+        <div class="grid-2 language-grid">
+          <div class="card language-card"><span>Arabic</span><strong>Native</strong></div>
+          <div class="card language-card"><span>English</span><strong>C1 — comfortable teaching & presenting</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let's talk about <em>data, teaching,</em> or your next project.</h2>
+          <p class="section-desc">Whether you're hiring an analyst, looking for an instructor, or want to collaborate on a project — I'd love to hear from you.</p>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="mailto:rahmayasserm@gmail.com">Send an email</a>
+            <a class="btn btn-outline" href="public/Rahma-Yasser-CV.pdf" download>Download CV</a>
+          </div>
+        </div>
+        <div class="contact-list">
+          <a class="contact-card" href="mailto:rahmayasserm@gmail.com"><span class="icon-box">✉</span><span><span class="contact-label">Email</span><br><span class="contact-value">rahmayasserm@gmail.com</span></span></a>
+          <a class="contact-card" href="https://www.linkedin.com/in/rahma-yaser/" target="_blank" rel="noopener noreferrer"><span class="icon-box">in</span><span><span class="contact-label">LinkedIn</span><br><span class="contact-value">linkedin.com/in/rahma-yaser</span></span></a>
+          <a class="contact-card" href="https://github.com/rahma-yaser" target="_blank" rel="noopener noreferrer"><span class="icon-box">GH</span><span><span class="contact-label">GitHub</span><br><span class="contact-value">github.com/rahma-yaser</span></span></a>
+        </div>
+      </div>
+      <div class="container">
+        <footer>
+          <span>© <span id="year"></span> Rahma Yasser Mahmoud. Based in Assiut, Egypt.</span>
+          <span>Designed & built with care.</span>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.getElementById('mobileToggle');
+    const menu = document.getElementById('mobileMenu');
+    const year = document.getElementById('year');
+
+    if (year) year.textContent = new Date().getFullYear();
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.textContent = open ? '×' : '☰';
+      });
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.textContent = '☰';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
